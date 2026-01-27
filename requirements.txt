@@ -1,0 +1,6 @@
+pandas
+matplotlib
+langchain
+langchain-community
+langgraph
+
