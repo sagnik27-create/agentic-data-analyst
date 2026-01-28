@@ -1,18 +1,11 @@
-from app.agent.llm import get_llm
+class Reflector:
+    def reflect(self, error, state):
+        print("Reflecting on failure:", error)
 
-llm = get_llm()
+        # Simple reflection logic (LLM later)
+        if "load" in str(error).lower():
+            return ["load_data", "clean_data", "analyze_data", "summarize_results"]
 
-def reflect(code: str, error: str):
-    prompt = f"""
-The following Python code failed:
+        return None
 
-{code}
-
-Error:
-{error}
-
-Fix the code.
-Return ONLY corrected Python code.
-"""
-    return llm.invoke(prompt).content
 
